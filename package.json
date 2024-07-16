@@ -1,0 +1,17 @@
+{
+  "name": "dcalink",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@jup-ag/dca-sdk": "2.3.5",
+    "@solana/actions": "^1.1.2",
+    "@solana/web3.js": "^1.95.0",
+    "hono": "^4.4.13"
+  }
+}
