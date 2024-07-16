@@ -7,6 +7,7 @@ import { createDCA } from "./dca";
 import { ActionError } from "@solana/actions";
 
 const app = new Hono();
+
 app.use(logger());
 
 app.use(cors({ origin: "*" }));

@@ -24,11 +24,11 @@ export const getDepositAction = (): ActionGetResponse => {
           },
           {
             name: orderQuery,
-            label: "How much $SEND do you wanna buy at a time",
+            label: "$SEND you wanna buy at a time (in USD)",
           },
           {
             name: frequencyQuery,
-            label: "And, how frequently? (In minutes eg 30)",
+            label: "How frequently? (In minutes, eg 30)",
           },
         ],
       },
