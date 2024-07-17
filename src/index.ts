@@ -77,7 +77,7 @@ app.get("/actions.json", (c) => {
   return c.json({
     rules: [
       {
-        pathPattern: "/blinks/**",
+        pathPattern: "/**",
         apiPath: "/deposit/**",
       },
     ],
