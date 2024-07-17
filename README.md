@@ -1,4 +1,4 @@
-# symlink
+# JUP DCA Blink
 
 To install dependencies:
 
