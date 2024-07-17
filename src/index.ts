@@ -10,7 +10,18 @@ const app = new Hono();
 
 app.use(logger());
 
-app.use(cors({ origin: "*" }));
+app.use(
+  cors({
+    origin: "*",
+    allowMethods: ["GET", "POST", "OPTIONS"],
+    allowHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Content-Encoding",
+      "Accept-Encoding",
+    ],
+  })
+);
 
 app.options("*", (c) => {
   c.header("Access-Control-Allow-Origin", "*");
@@ -24,6 +35,17 @@ app.options("*", (c) => {
 
 app.get("/", (c) => {
   return c.text("gm!");
+});
+
+app.get("/actions.json", (c) => {
+  return c.json({
+    rules: [
+      {
+        pathPattern: "/blinks/**",
+        apiPath: "/deposit/**",
+      },
+    ],
+  });
 });
 
 app.get("/blinks", async (c) => {
