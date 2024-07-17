@@ -12,6 +12,16 @@ app.use(logger());
 
 app.use(cors({ origin: "*" }));
 
+app.options("*", (c) => {
+  c.header("Access-Control-Allow-Origin", "*");
+  c.header("Access-Control-Allow-Methods", "GET,POST,PUT,OPTIONS");
+  c.header(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization, Content-Encoding, Accept-Encoding"
+  );
+  return c.text("OK");
+});
+
 app.get("/", (c) => {
   return c.text("gm!");
 });
