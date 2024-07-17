@@ -34,7 +34,43 @@ app.options("*", (c) => {
 });
 
 app.get("/", (c) => {
-  return c.text("gm!");
+  const icon =
+    "https://image.lexica.art/full_webp/137513ea-76f3-4222-97e2-c323f70619e8";
+  const label = "DCA";
+  const title = "Buy $SEND using JUP DCA 🐳";
+  const description = "Buy in on the next best token";
+
+  const html = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>${title}</title>
+        <meta name="description" content="${description}">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="${c.req.url}">
+        <meta property="og:title" content="${title}">
+        <meta property="og:description" content="${description}">
+        <meta property="og:image" content="${icon}">
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="${c.req.url}">
+        <meta property="twitter:title" content="${title}">
+        <meta property="twitter:description" content="${description}">
+        <meta property="twitter:image" content="${icon}">
+    </head>
+    <body>
+        <h1>${title}</h1>
+        <p>${description}</p>
+    </body>
+    </html>
+  `;
+
+  return c.html(html);
 });
 
 app.get("/actions.json", (c) => {
