@@ -78,7 +78,7 @@ app.get("/actions.json", (c) => {
     rules: [
       {
         pathPattern: "/**",
-        apiPath: "/dca/**",
+        apiPath: "/blinks/*",
       },
     ],
   });
